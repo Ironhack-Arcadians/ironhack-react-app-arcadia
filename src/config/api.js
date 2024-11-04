@@ -1,0 +1,1 @@
+export const API_URL = "https://arcadia-3538a-default-rtdb.europe-west1.firebasedatabase.app"
