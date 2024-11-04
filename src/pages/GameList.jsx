@@ -1,6 +1,29 @@
 import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { API_URL } from "../config/api.js";
+import { useEffect, useState } from "react";
 
-function GameList({ games, onDelete }) {
+function GameList() {
+    const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/videogames.json`)
+      .then((response) => {
+        const gamesArr = Object.keys(response.data).map((id) => ({
+          id: id,
+          ...response.data[id],
+        }));
+        const gamesReversedArr = gamesArr.toReversed();
+        setGames(gamesReversedArr);
+
+      })
+      .catch((e) => console.log("Error: ", e));
+  }, []);
+
+
+
   if (games.length === 0) {
     return <p>No games available</p>;
   }
@@ -8,13 +31,13 @@ function GameList({ games, onDelete }) {
   return (
     <div className="list-boundary">
       <ul className="games-list">
-        {games.map((gameObj) => (
+        {games && games.map((gameObj) => (
           <li key={gameObj.id} className="game-item">
-              <img
-                src={gameObj.img_link}
-                alt={`${gameObj.name}`}
-                className="recipe-img"
-              />
+            <img
+              src={gameObj.img_link}
+              alt={`${gameObj.name}`}
+              className="recipe-img"
+            />
             <div className="game-text">
               <h2>{gameObj.name}</h2>
               <p>{gameObj.genre}</p>
@@ -24,7 +47,9 @@ function GameList({ games, onDelete }) {
             </div>
 
             <div className="game-buttons">
-              <button onClick={() => onDelete(gameObj.id)}>Delete</button>
+              <Link to={`/catalogue/${gameObj.id}`}>
+                <button className="button">More Details</button>
+              </Link>
             </div>
           </li>
         ))}
