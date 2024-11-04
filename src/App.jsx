@@ -5,7 +5,7 @@ import React from "react";
 
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar/Navbar.jsx";
 import About from "./pages/About";
 import GameDetailsPage from "./pages/GameDetailsPage/GameDetailsPage.jsx";
 import GameList from "./pages/GameList";
