@@ -1,0 +1,34 @@
+.GameDetailsPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.game-details-card{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.game-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.game-dtext{
+    width: 30rem;
+    padding-bottom: 5rem;
+}
+
+.game-dimg img{
+    margin: 2rem;
+    width: 20rem;
+    
+}
+
+.game-details.button-container{
+    width: 300rem;
+    display: flex;
+    flex-direction: row;
+    
+}

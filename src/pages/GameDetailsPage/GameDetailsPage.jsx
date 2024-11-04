@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import "./GameDetailsPage.css";
+
 
 import { API_URL } from "../../config/api.js";
 import Loader from "../../components/Loader.jsx";
@@ -42,28 +44,31 @@ function GameDetailsPage() {
     <div className="GameDetailsPage">
       {game && (
         <div className="game-details-card">
-          <div className="game-title">
+          <div className="game-dtitle">
             <h1>{game.name}</h1>
             <h2>{game.genre}</h2>
           </div>
-          <div className="game-img">
+          <div className="game-content">
+          <div className="game-dimg">
             <img src={game.img_link} alt="Game image" />
           </div>
-          <div className="game-content">
+          <div className="game-dtext">
             <h2>{game.rating}</h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
-          </div>
-
+            </div>
+            </div>
+          <div className="game-details-button-container">
           <button className="button"> Edit </button>
 
           <Link to="/catalogue">
             <button className="button">Back to videogames list </button>
           </Link>
 
-          <button className="button" onClick={deleteGame}>
+          <button className="delete-button" onClick={deleteGame}>
             Delete
           </button>
+          </div>
         </div>
       )}
     </div>
