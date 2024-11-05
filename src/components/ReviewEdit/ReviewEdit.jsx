@@ -1,22 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function GameForm({ onSubmitReview }) {
+function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     const [username, setUsername] = useState("");
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState("");
 
+
+    useEffect(() => {
+        if(initialReview) {
+            setUsername(initialReview.username || "");
+            setComment(initialReview.comment || "");
+            setRating(initialReview.rating || "");
+        }
+    }, [initialReview]);
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const reviewData = {
-          username,
-          rating: parseFloat(rating), //ParseFloat() --> ensures the rating is a number.
-          comment,
+        const updatedReview = {
+            id: initialReview.id,
+            username: username,
+            rating: parseFloat(rating),
+            comment: comment,
         };
-        onSubmitReview(reviewData);
-      };
+
+        onEditReview(updatedReview);
+    };
 
     return (
-        <form className="game-form" onSubmit={handleSubmit}>
+        <form className="edit-form" onSubmit={handleSubmit}>
             <label>
                 Username:
                 <input
@@ -52,4 +64,4 @@ function GameForm({ onSubmitReview }) {
     );
 }
 
-export default GameForm;
+export default ReviewEdit;

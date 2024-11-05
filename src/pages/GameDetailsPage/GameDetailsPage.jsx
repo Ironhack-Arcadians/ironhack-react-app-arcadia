@@ -6,12 +6,13 @@ import "./GameDetailsPage.css";
 import { API_URL } from "../../config/api.js";
 import Loader from "../../components/Loader.jsx";
 import GameForm from "../../components/GameForm/GameForm.jsx";
+import ReviewEdit from "../../components/ReviewEdit/ReviewEdit.jsx";
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [editingReview, setEditingReview] = useState(null);
   const { gameId } = useParams();
-  const navigate = useNavigate();
 
   const getGame = () => {
     axios
@@ -19,12 +20,14 @@ function GameDetailsPage() {
       .then((response) => {
         const gameData = response.data;
 
-        const reviews = gameData.reviews ? Object.keys(gameData.reviews).map((key) => ({
-          ...gameData.reviews[key],
-          id: key,
-        })) : [];
+        const reviews = gameData.reviews
+          ? Object.keys(gameData.reviews).map((key) => ({
+              ...gameData.reviews[key],
+              id: key,
+            }))
+          : [];
         setGame({ ...gameData, reviews });
-        console.log("Reviews:", reviews)
+        console.log("Reviews:", reviews);
       })
       .catch((e) => console.log("Oops, there is an error! ", e));
   };
@@ -33,21 +36,45 @@ function GameDetailsPage() {
     axios
       .delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`)
       .then(() => {
-      alert("Review deleted successfully");
-      getGame();
-      })  
+        alert("Review deleted successfully");
+        getGame();
+      })
       .catch((error) => console.log("Error deleting review...", error));
   };
 
   const handleSubmitReview = (reviewData) => {
     axios
       .post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData)
-      .then((response) => {
+      .then(() => {
         alert("Review submitted successfully!");
         setShowForm(false);
         getGame();
       })
       .catch((e) => console.log("Error submitting review...", e));
+  };
+
+  const handleEditReview = (review) => {
+    setEditingReview(review);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingReview(null);
+  };
+
+  const handleUpdateReview = (updatedReview) => {
+    axios
+      .put(
+        `${API_URL}/videogames/${gameId}/reviews/${updatedReview.id}.json`,
+        updatedReview
+      )
+      .then(() => {
+        alert("Review updated successfully!");
+        getGame();
+        setEditingReview(null);
+      })
+      .catch((e) => {
+        console.log("Error updating review...", e);
+      });
   };
 
   useEffect(() => {
@@ -78,9 +105,14 @@ function GameDetailsPage() {
 
         <div className="game-details-button-container">
           <Link to="/catalogue">
-            <button id="back-button" className="game-buttons glow-on-hover">Back to videogames list</button>
+            <button id="back-button" className="game-buttons glow-on-hover">
+              Back to videogames list
+            </button>
           </Link>
-          <button className="game-buttons glow-on-hover" onClick={() => setShowForm(!showForm)}>
+          <button
+            className="game-buttons glow-on-hover"
+            onClick={() => setShowForm(!showForm)}
+          >
             {showForm ? "Cancel Review" : "Leave a Review"}
           </button>
         </div>
@@ -89,20 +121,33 @@ function GameDetailsPage() {
         <div className="review-list">
           <h2>Reviews</h2>
           {game.reviews && game.reviews.length > 0 ? (
-            game.reviews.map((review, index) => (
-              <div key={index} className="review-item">
-                <div className="review-header">
-                <div className="details-user-name">
-                  <h3>{review.username}</h3>
-                </div>
-                <div className="details-score">
-                  <p>My score: {review.rating}</p>
-                </div>
-                </div>
-                <div className="comment">
-                  <p>"{review.comment}"</p>
-                </div>
-                <button className="delete-btn" onClick={() => deleteReview(review.id)}>Delete Review</button>
+            game.reviews.map((review) => (
+              <div key={review.id} className="review-item">
+                {editingReview && editingReview.id === review.id ? (
+                  <ReviewEdit
+                    initialReview={review}
+                    onEditReview={handleUpdateReview}
+                    onCancelEdit={handleCancelEdit}
+                  />
+                ) : (
+                  <>
+                    <h3>{review.username}</h3>
+                    <p>Rating: {review.rating}/10</p>
+                    <p>{review.comment}</p>
+                    <button
+                      className="edit-button"
+                      onClick={() => handleEditReview(review)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="delete-btn"
+                      onClick={() => deleteReview(review.id)}
+                    >
+                      Delete
+                    </button>
+                  </>
+                )}
               </div>
             ))
           ) : (
