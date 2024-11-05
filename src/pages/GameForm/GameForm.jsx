@@ -7,15 +7,13 @@ function GameForm({ onSubmitReview }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(username && comment && rating >= 0 && rating <= 10) {
-            onSubmitReview({ username, comment, rating });
-            setUsername("");
-            setComment("");
-            setRating("");
-        } else {
-            alert("Please fill out all fields and provide a rating between 0 and 10.")
-        }
-    };
+        const reviewData = {
+          username,
+          rating: parseFloat(rating), // Ensure the rating is a number
+          comment,
+        };
+        onSubmitReview(reviewData); // Call the handler passed as prop
+      };
 
     return (
         <form className="game-form" onSubmit={handleSubmit}>

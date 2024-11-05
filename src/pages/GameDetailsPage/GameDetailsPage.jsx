@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./GameDetailsPage.css";
 
-
 import { API_URL } from "../../config/api.js";
 import Loader from "../../components/Loader.jsx";
 import GameForm from "../GameForm/GameForm.jsx";
@@ -11,16 +10,21 @@ import GameForm from "../GameForm/GameForm.jsx";
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
   const [showForm, setShowForm] = useState(false);
-
   const { gameId } = useParams();
-
   const navigate = useNavigate();
 
   const getGame = () => {
     axios
       .get(`${API_URL}/videogames/${gameId}.json`)
       .then((response) => {
-        setGame(response.data);
+        const gameData = response.data;
+        
+        const reviews = gameData.reviews ? Object.keys(gameData.reviews).map((key) => ({
+          ...gameData.reviews[key],
+          id: key,
+        })) : [];
+        setGame({ ...gameData, reviews });
+        console.log("Reviews:", reviews)
       })
       .catch((e) => console.log("Oops, there is an error! ", e));
   };
@@ -34,17 +38,16 @@ function GameDetailsPage() {
       .catch((error) => console.log("Error deleting project...", error));
   };
 
-
   const handleSubmitReview = (reviewData) => {
-    axios.post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData)
-    .then((response) => {
-      alert("Review submitted successfully!")
-      setShowForm(false);
-    })
-    .catch((e) => console.log("Error submitting review...", e));
+    axios
+      .post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData)
+      .then((response) => {
+        alert("Review submitted successfully!");
+        setShowForm(false);
+        getGame();
+      })
+      .catch((e) => console.log("Error submitting review...", e));
   };
-
-
 
   useEffect(() => {
     getGame();
@@ -71,7 +74,7 @@ function GameDetailsPage() {
             <a href={game.guide_link}>{game.name} guide</a>
           </div>
         </div>
-        
+
         <div className="game-details-button-container">
           <Link to="/catalogue">
             <button className="button">Back to videogames list</button>
@@ -84,19 +87,22 @@ function GameDetailsPage() {
           <button className="button" onClick={() => setShowForm(!showForm)}>
             {showForm ? "Cancel Review" : "Leave a Review"}
           </button>
-
         </div>
-          {showForm && <GameForm onSubmitReview={handleSubmitReview} />}
+        {showForm && <GameForm onSubmitReview={handleSubmitReview} />}
 
         <div className="review-list">
           <h2>Reviews</h2>
-          {game.reviews.map((review, index) => (
-            <div key={index} className="review-item">
-              <h3>{review.username}</h3>
-              <p>Rating: {review.rating}/10</p>
-              <p>{review.comment}</p>
-            </div>
-          ))}
+          {game.reviews && game.reviews.length > 0 ? (
+            game.reviews.map((review, index) => (
+              <div key={index} className="review-item">
+                <h3>{review.username}</h3>
+                <p>Rating: {review.rating}/10</p>
+                <p>{review.comment}</p>
+              </div>
+            ))
+          ) : (
+            <p>No reviews available.</p>
+          )}
         </div>
       </div>
     </div>
