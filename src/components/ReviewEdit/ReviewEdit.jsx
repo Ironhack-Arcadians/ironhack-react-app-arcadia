@@ -29,7 +29,10 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     };
 
     return (
-        <form className="glow-on-hover" onSubmit={handleSubmit}>
+        <form className="game-form" onSubmit={handleSubmit}>
+            <div>
+            <div>
+            <div>
             <label>
                 Username:
                 <input
@@ -39,6 +42,9 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
                 required
                 />
             </label>
+            </div>
+            <div>
+
             <label>
                 Comment:
                 <input
@@ -48,6 +54,9 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
                 required
                 />
             </label>
+                </div>
+                <div>
+
             <label>
                 Rating:
                 <input
@@ -60,14 +69,20 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
                 required
                 />
             </label>
+            </div>
+            </div>
+            <div>
+
             <button id="submit-button" className="review-buttons glow-on-hover" type="submit">Submit Edit</button>
             <button
                 type="button"
                 className="review-buttons glow-on-hover cancel-button"
                 onClick={onCancelEdit}
-            >
+                >
                 Cancel Edit
             </button>
+                    </div>
+                </div>
         </form>
     );
 }
