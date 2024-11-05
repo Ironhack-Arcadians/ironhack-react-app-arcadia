@@ -5,7 +5,7 @@ import "./GameDetailsPage.css";
 
 import { API_URL } from "../../config/api.js";
 import Loader from "../../components/Loader.jsx";
-import GameForm from "../GameForm/GameForm.jsx";
+import GameForm from "../../components/GameForm/GameForm.jsx";
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
@@ -29,13 +29,14 @@ function GameDetailsPage() {
       .catch((e) => console.log("Oops, there is an error! ", e));
   };
 
-  const deleteGame = () => {
+  const deleteReview = (reviewId) => {
     axios
-      .delete(`${API_URL}/videogames/${gameId}.json`)
-      .then((response) => {
-        navigate("/catalogue");
-      })
-      .catch((error) => console.log("Error deleting project...", error));
+      .delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`)
+      .then(() => {
+      alert("Review deleted successfully");
+      getGame();
+      })  
+      .catch((error) => console.log("Error deleting review...", error));
   };
 
   const handleSubmitReview = (reviewData) => {
@@ -101,6 +102,7 @@ function GameDetailsPage() {
                 <div className="comment">
                   <p>"{review.comment}"</p>
                 </div>
+                <button className="delete-btn" onClick={() => deleteReview(review.id)}>Delete Review</button>
               </div>
             ))
           ) : (
