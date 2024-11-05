@@ -13,6 +13,7 @@
   background-origin: border-box;
   position: relative;
   animation: l9-0 2s infinite;
+  margin-top: 25rem;
 }
 .loader::before {
   content:"Loading";
