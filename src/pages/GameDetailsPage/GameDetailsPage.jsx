@@ -42,13 +42,12 @@ function GameDetailsPage() {
 
   return (
     <div className="GameDetailsPage">
-      {game && (
-        <div className="game-details-card">
-          <div className="game-dtitle">
-            <h1>{game.name}</h1>
-            <h2>{game.genre}</h2>
-          </div>
-          <div className="game-content">
+      <div className="game-details-card">
+        <div className="game-dtitle">
+          <h1>{game.name}</h1>
+          <h2>{game.genre}</h2>
+        </div>
+        <div className="game-content">
           <div className="game-dimg">
             <img src={game.img_link} alt="Game image" />
           </div>
@@ -56,21 +55,30 @@ function GameDetailsPage() {
             <h2>{game.rating}</h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
-            </div>
-            </div>
-          <div className="game-details-button-container">
-          <button className="button"> Edit </button>
-
+          </div>
+        </div>
+        
+        <div className="game-details-button-container">
           <Link to="/catalogue">
-            <button className="button">Back to videogames list </button>
+            <button className="button">Back to videogames list</button>
           </Link>
-
+          <button className="button">Edit</button>
           <button className="delete-button" onClick={deleteGame}>
             Delete
           </button>
-          </div>
         </div>
-      )}
+
+        <div className="review-list">
+          <h2>Reviews</h2>
+          {game.reviews.map((review, index) => (
+            <div key={index} className="review-item">
+              <h3>{review.username}</h3>
+              <p>Rating: {review.rating}/10</p>
+              <p>{review.comment}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
