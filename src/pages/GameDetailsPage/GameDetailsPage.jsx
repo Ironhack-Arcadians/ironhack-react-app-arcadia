@@ -138,7 +138,7 @@ function GameDetailsPage() {
                       className="edit-button"
                       onClick={() => handleEditReview(review)}
                     >
-                      Edit
+                      {showForm ? "Cancel Edit" : "Edit"}
                     </button>
                     <button
                       className="delete-btn"

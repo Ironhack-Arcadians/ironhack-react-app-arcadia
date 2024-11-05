@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./reviewEdit.css";
 
 function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     const [username, setUsername] = useState("");
@@ -28,7 +29,7 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     };
 
     return (
-        <form className="edit-form" onSubmit={handleSubmit}>
+        <form className="glow-on-hover" onSubmit={handleSubmit}>
             <label>
                 Username:
                 <input
@@ -59,7 +60,14 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
                 required
                 />
             </label>
-            <button id="submit-button" className="game-buttons glow-on-hover" type="submit">Submit Review</button>
+            <button id="submit-button" className="review-buttons glow-on-hover" type="submit">Submit Edit</button>
+            <button
+                type="button"
+                className="review-buttons glow-on-hover cancel-button"
+                onClick={onCancelEdit}
+            >
+                Cancel Edit
+            </button>
         </form>
     );
 }
