@@ -6,9 +6,11 @@ import "./GameDetailsPage.css";
 
 import { API_URL } from "../../config/api.js";
 import Loader from "../../components/Loader.jsx";
+import GameForm from "../GameForm/GameForm.jsx";
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   const { gameId } = useParams();
 
@@ -31,6 +33,18 @@ function GameDetailsPage() {
       })
       .catch((error) => console.log("Error deleting project...", error));
   };
+
+
+  const handleSubmitReview = (reviewData) => {
+    axios.post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData)
+    .then((response) => {
+      alert("Review submitted successfully!")
+      setShowForm(false);
+    })
+    .catch((e) => console.log("Error submitting review...", e));
+  };
+
+
 
   useEffect(() => {
     getGame();
@@ -66,7 +80,13 @@ function GameDetailsPage() {
           <button className="delete-button" onClick={deleteGame}>
             Delete
           </button>
+
+          <button className="button" onClick={() => setShowForm(!showForm)}>
+            {showForm ? "Cancel Review" : "Leave a Review"}
+          </button>
+
         </div>
+          {showForm && <GameForm onSubmitReview={handleSubmitReview} />}
 
         <div className="review-list">
           <h2>Reviews</h2>

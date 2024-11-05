@@ -6,7 +6,7 @@
 .game-details-card{
     display: flex;
     flex-direction: column;
- 
+    margin-top: 3rem;
 }
 
 .game-content{
@@ -26,9 +26,3 @@
     
 }
 
-.game-details.button-container{
-    width: 300rem;
-    display: flex;
-    flex-direction: row;
-    
-}

@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/NavBar/Navbar.jsx";
 import About from "./pages/About/About.jsx"
 import GameDetailsPage from "./pages/GameDetailsPage/GameDetailsPage.jsx";
-import GameList from "./pages/GameList";
+import GameList from "./pages/GameList/GameList.jsx";
 
 function App() {
   const handleDelete = (id) => {

@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../images/Logo.png";
-import "./NavBar.css"
+import "./NavBar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-container">
-      <img src={logo} alt="Logo" className="logo"/>
+        <NavLink to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </NavLink>
       </div>
       <div className="title-container">
         <h1>[Arcadia]</h1>
