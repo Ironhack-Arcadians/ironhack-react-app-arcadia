@@ -141,7 +141,7 @@ function GameDetailsPage() {
                     <button
                       className="game-buttons glow-on-hover"
                       onClick={() => handleEditReview(review)}
-                      >
+                    >
                       Edit
                     </button>
                     <button
