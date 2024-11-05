@@ -40,7 +40,7 @@ function GameList() {
               className="recipe-img"
             />
             <div className="game-name">
-              <h2>{gameObj.name}</h2>
+              <h3>{gameObj.name}</h3>
             </div>
               <div className="game-text">
               <p>{gameObj.genre}</p>
