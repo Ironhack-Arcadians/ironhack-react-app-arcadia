@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config/api.js";
 import { useEffect, useState } from "react";
+import "./GameList.css";
 
 function GameList() {
     const [games, setGames] = useState([]);
@@ -38,17 +39,17 @@ function GameList() {
               alt={`${gameObj.name}`}
               className="recipe-img"
             />
-            <div className="game-text">
+            <div className="game-name">
               <h2>{gameObj.name}</h2>
+            </div>
+              <div className="game-text">
               <p>{gameObj.genre}</p>
               <p>{gameObj.rating}</p>
-              <p>{gameObj.description}</p>
-              <p>{gameObj.guide_link}</p>
-            </div>
+              </div>
 
-            <div className="game-buttons">
+            <div className="game-buttons glow-on-hover">
               <Link to={`/catalogue/${gameObj.id}`}>
-                <button className="button">More Details</button>
+                <button className="game-list-button">More Details</button>
               </Link>
             </div>
           </li>
