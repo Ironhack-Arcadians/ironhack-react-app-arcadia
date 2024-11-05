@@ -47,7 +47,7 @@ function GameForm({ onSubmitReview }) {
                 required
                 />
             </label>
-            <button type="submit">Submit Review</button>
+            <button id="submit-button" className="game-buttons glow-on-hover" type="submit">Submit Review</button>
         </form>
     );
 }

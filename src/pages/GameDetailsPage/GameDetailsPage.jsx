@@ -18,7 +18,7 @@ function GameDetailsPage() {
       .get(`${API_URL}/videogames/${gameId}.json`)
       .then((response) => {
         const gameData = response.data;
-        
+
         const reviews = gameData.reviews ? Object.keys(gameData.reviews).map((key) => ({
           ...gameData.reviews[key],
           id: key,
@@ -60,16 +60,16 @@ function GameDetailsPage() {
   return (
     <div className="GameDetailsPage">
       <div className="game-details-card">
-        <div className="game-dtitle">
-          <h1>{game.name}</h1>
-          <h2>{game.genre}</h2>
-        </div>
         <div className="game-content">
           <div className="game-dimg">
             <img src={game.img_link} alt="Game image" />
           </div>
           <div className="game-dtext">
-            <h2>{game.rating}</h2>
+            <div className="game-dtitle">
+              <h2>{game.name}</h2>
+              <h3>{game.genre}</h3>
+            </div>
+            <h2>Score: {game.rating}</h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
           </div>
@@ -77,14 +77,9 @@ function GameDetailsPage() {
 
         <div className="game-details-button-container">
           <Link to="/catalogue">
-            <button className="button">Back to videogames list</button>
+            <button id="back-button" className="game-buttons glow-on-hover">Back to videogames list</button>
           </Link>
-          <button className="button">Edit</button>
-          <button className="delete-button" onClick={deleteGame}>
-            Delete
-          </button>
-
-          <button className="button" onClick={() => setShowForm(!showForm)}>
+          <button className="game-buttons glow-on-hover" onClick={() => setShowForm(!showForm)}>
             {showForm ? "Cancel Review" : "Leave a Review"}
           </button>
         </div>
@@ -95,9 +90,17 @@ function GameDetailsPage() {
           {game.reviews && game.reviews.length > 0 ? (
             game.reviews.map((review, index) => (
               <div key={index} className="review-item">
-                <h3>{review.username}</h3>
-                <p>Rating: {review.rating}/10</p>
-                <p>{review.comment}</p>
+                <div className="review-header">
+                <div className="details-user-name">
+                  <h3>{review.username}</h3>
+                </div>
+                <div className="details-score">
+                  <p>My score: {review.rating}</p>
+                </div>
+                </div>
+                <div className="comment">
+                  <p>"{review.comment}"</p>
+                </div>
               </div>
             ))
           ) : (
