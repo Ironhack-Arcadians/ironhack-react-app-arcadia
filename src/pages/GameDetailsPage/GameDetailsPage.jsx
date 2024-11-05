@@ -131,21 +131,26 @@ function GameDetailsPage() {
                   />
                 ) : (
                   <>
+                  <div className="review-header">
                     <h3>{review.username}</h3>
-                    <p>Rating: {review.rating}/10</p>
-                    <p>{review.comment}</p>
+                    <h3>Rating: {review.rating}/10</h3>
+                  </div>
+                    <p className="comment">"{review.comment}"</p>
+                    <div>
+
                     <button
-                      className="edit-button"
+                      className="game-buttons glow-on-hover"
                       onClick={() => handleEditReview(review)}
                     >
-                      {showForm ? "Cancel Edit" : "Edit"}
+                      Edit
                     </button>
                     <button
-                      className="delete-btn"
+                      className="game-buttons glow-on-hover"
                       onClick={() => deleteReview(review.id)}
-                    >
+                      >
                       Delete
                     </button>
+                      </div>
                   </>
                 )}
               </div>
