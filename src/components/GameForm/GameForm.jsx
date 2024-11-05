@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./GameForm.css";
 
 function GameForm({ onSubmitReview }) {
     const [username, setUsername] = useState("");
@@ -16,7 +17,11 @@ function GameForm({ onSubmitReview }) {
       };
 
     return (
+        
+
         <form className="game-form" onSubmit={handleSubmit}>
+            <div>
+            <div>
             <label>
                 Username:
                 <input
@@ -26,6 +31,8 @@ function GameForm({ onSubmitReview }) {
                 required
                 />
             </label>
+                </div>
+                <div>
             <label>
                 Comment:
                 <input
@@ -35,6 +42,9 @@ function GameForm({ onSubmitReview }) {
                 required
                 />
             </label>
+                </div>
+                <div>
+
             <label>
                 Rating:
                 <input
@@ -47,8 +57,13 @@ function GameForm({ onSubmitReview }) {
                 required
                 />
             </label>
+                </div>
+                </div>
+                <div>
             <button id="submit-button" className="game-buttons glow-on-hover" type="submit">Submit Review</button>
+                </div>
         </form>
+               
     );
 }
 
