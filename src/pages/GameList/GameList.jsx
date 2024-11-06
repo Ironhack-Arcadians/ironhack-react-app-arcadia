@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Loader from "../../components/Loader.jsx";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../config/api";
 import { useEffect, useState } from "react";
@@ -40,7 +41,7 @@ function GameList() {
   }, []);
 
   if (games.length === 0) {
-    return <p>No games available</p>;
+    return  <Loader />;
   }
 
   return (
