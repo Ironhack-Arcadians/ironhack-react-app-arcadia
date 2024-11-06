@@ -1,127 +1,135 @@
+body.game-details-page-background {
+  background-image: url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148383735.jpg?t=st=1730902859~exp=1730906459~hmac=4276c56f4955e91e3bd2f1859302575587f2294ac8eeca03c1d2fbd27c2e7ae2&w=1380");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0;
+}
+
 .GameDetailsPage {
-    display: inline-flex;
-    flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .game-details-card {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
 }
 
-.comment{
-    background-color: white;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 1rem;
-  }
-  
+.comment {
+  background-color: rgba(224, 206, 210, 0.695);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1rem;
+}
 
 .game-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin-bottom: 3rem;
-    margin-top: 6rem;
-    background-color: rgba(106, 106, 196, 0.226);
-    padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  margin-top: 6rem;
+  background-color: rgba(106, 106, 196, 0.9);
+  padding: 3rem;
 }
 
 .game-dtext {
-    width: 30rem;
-    padding-bottom: 5rem;
-    background-color: white;
-    border: 1px solid black;
+  width: 30rem;
+  padding-bottom: 5rem;
+  background-color: rgba(224, 206, 210, 0.695);
+  border: 1px solid black;
 }
 
 .game-dimg img {
-    margin: 2rem;
-    width: 20rem;
-    border: 3px solid rgb(0, 0, 0);
-
+  margin: 2rem;
+  width: 20rem;
+  border: 3px solid rgb(0, 0, 0);
 }
 
 #back-button {
-    width: 14rem;
-    margin-right: 20rem
+  width: 14rem;
+  margin-right: 20rem;
 }
 
 .review-item {
-    border-radius: 10px;
-    padding: 2rem;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: rgba(106, 106, 196, 0.226);
-    margin: 1rem;
-    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+  border-radius: 10px;
+  padding: 2rem;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: rgba(106, 106, 196, 0.9);
+  margin: 1rem;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
 .review-item:hover {
-    padding-left: 0.5rem;
-    border-left: 0.5rem solid #0051ff86;
+  padding-left: 0.5rem;
+  border-left: 0.5rem solid #0051ff86;
 }
 
 .review-item button {
-    margin: 1rem 1rem 0 1rem
+  margin: 1rem 1rem 0 1rem;
 }
 
 .review-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .details-score {
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 
 .details-user-name {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
 @media (max-width: 460px) {
-    .game-content {
-        flex-direction: column; /* Stack image and text vertically */
-        padding: 1.5rem;
-        margin: 4rem 0 1rem 0;
-    }
+  .game-content {
+    flex-direction: column; /* Stack image and text vertically */
+    padding: 1.5rem;
+    margin: 4rem 0 1rem 0;
+  }
 
-    .comment {
-        margin:0
-    }
+  .comment {
+    margin: 0;
+  }
 
-    .game-dtext {
-        width: auto; /* Full width */
-        padding: 0.2rem;
-    }
+  .game-dtext {
+    width: auto; /* Full width */
+    padding: 0.2rem;
+  }
 
-    .game-dimg img {
-        width: 90%; /* Scale image to fit screen */
-        margin: 0.5rem auto;
-    }
+  .game-dimg img {
+    width: 90%; /* Scale image to fit screen */
+    margin: 0.5rem auto;
+  }
 
-    #back-button {
-        width: 67%;
-        margin: 1rem 0;
-    }
+  #back-button {
+    width: 67%;
+    margin: 1rem 0;
+  }
 
-    .review-item {
-        padding: 0 1rem 1rem 1rem;
-        margin: 1.5rem 0;
-    }
+  .review-item {
+    padding: 0 1rem 1rem 1rem;
+    margin: 1.5rem 0;
+  }
 
-    .review-header {
-        flex-direction: column; /* Stack username and score vertically */
-        align-items: center;
-    }
+  .review-header {
+    flex-direction: column; /* Stack username and score vertically */
+    align-items: center;
+  }
 
-    .review-header h3{
-        margin:5px
-    }
+  .review-header h3 {
+    margin: 5px;
+  }
 
-    .details-score, .details-user-name {
-        margin: 0; /* Remove extra margins */
-    }
+  .details-score,
+  .details-user-name {
+    margin: 0; /* Remove extra margins */
+  }
 }

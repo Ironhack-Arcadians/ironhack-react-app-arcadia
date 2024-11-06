@@ -77,7 +77,13 @@ function GameDetailsPage() {
   };
 
   useEffect(() => {
+    document.body.classList.add('game-details-page-background');
     getGame();
+
+    return () => {
+      document.body.classList.remove('game-details-page-background');
+    }
+
   }, [gameId]);
 
   if (game === null) {
