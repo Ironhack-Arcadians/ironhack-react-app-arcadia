@@ -65,7 +65,7 @@
   border: none;
   outline: none;
   color: #fff;
-  background: #111;
+  background: #000000;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -101,7 +101,7 @@
 }
 
 .glow-on-hover:active {
-  color: #000;
+  color: #000000;
 }
 
 .glow-on-hover:active:after {

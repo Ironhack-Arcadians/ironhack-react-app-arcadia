@@ -162,7 +162,7 @@ function GameDetailsPage() {
               </div>
             ))
           ) : (
-            <p>No reviews available.</p>
+            <p className="no-reviews">No reviews available.</p>
           )}
         </div>
       </div>
