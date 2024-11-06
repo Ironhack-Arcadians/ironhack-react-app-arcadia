@@ -133,3 +133,39 @@
     background-position: 0 0;
   }
 }
+
+/* MOBILE RESPONSIVENESS*/
+
+@media (max-width: 460px) {
+
+  .games-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+    margin-top: 6rem;
+  }
+
+  .game-item {
+    width: 90%; 
+    padding: 0.75rem;
+  }
+
+  .recipe-img {
+    width: 8rem; 
+  }
+
+  .game-name, .game-text {
+    flex-direction: column;
+    margin: 0.5rem 0 0 0;
+    gap: 0rem; 
+  }
+
+  .game-text p{
+    margin:0
+  }
+
+  .glow-on-hover {
+    width: 180px; 
+    height: 40px;
+  }
+}

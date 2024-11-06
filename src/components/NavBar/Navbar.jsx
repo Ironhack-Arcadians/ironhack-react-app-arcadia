@@ -10,6 +10,7 @@ function Navbar() {
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
+      
       <div className="title-container">
         <h1>[Arcadia]</h1>
       </div>

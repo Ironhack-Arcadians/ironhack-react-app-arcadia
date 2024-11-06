@@ -76,3 +76,47 @@
     margin-left: 3rem;
 }
 
+@media (max-width: 460px) {
+    .game-content {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 1.5rem;
+        margin: 4rem 0 1rem 0;
+    }
+
+    .comment {
+        margin:0
+    }
+
+    .game-dtext {
+        width: auto; /* Full width */
+        padding: 0.2rem;
+    }
+
+    .game-dimg img {
+        width: 90%; /* Scale image to fit screen */
+        margin: 0.5rem auto;
+    }
+
+    #back-button {
+        width: 67%;
+        margin: 1rem 0;
+    }
+
+    .review-item {
+        padding: 0 1rem 1rem 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .review-header {
+        flex-direction: column; /* Stack username and score vertically */
+        align-items: center;
+    }
+
+    .review-header h3{
+        margin:5px
+    }
+
+    .details-score, .details-user-name {
+        margin: 0; /* Remove extra margins */
+    }
+}
