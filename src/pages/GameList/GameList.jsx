@@ -10,7 +10,7 @@ function GameList() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundImage = 'url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148383735.jpg?t=st=1730911407~exp=1730915007~hmac=4f022e345fde10e67aeaa5bf16cbbf1c1ef1cd211342e7a244da6e8258b01e4a&w=1380")';
+    document.body.style.backgroundImage = 'url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380")';
     document.body.style.backgroundSize = 'cover'; 
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundRepeat = 'no-repeat';
