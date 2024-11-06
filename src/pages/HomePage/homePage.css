@@ -1,3 +1,14 @@
+body.home-page-background {
+  background-image: url('https://img.freepik.com/free-vector/linear-retro-gradient-background_23-2148913434.jpg?t=st=1730893479~exp=1730897079~hmac=0a6b7414c8cc2004c212be1e7f2b91ee53661a3923d8777dbdc042a364f3716c&w=1380');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0;
+  min-height: 100vh;
+  color: white;
+}
+
 .home-page {
     display: flex;
     flex-direction: column;
@@ -13,12 +24,12 @@
   
   .home-header h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: white;
   }
   
   .home-header p {
     font-size: 1.2rem;
-    color: #666;
+    color: white;
   }
   
   .home-buttons {
