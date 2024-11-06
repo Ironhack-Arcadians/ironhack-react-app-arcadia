@@ -14,43 +14,47 @@ function GameDetailsPage() {
   const [editingReview, setEditingReview] = useState(null);
   const { gameId } = useParams();
 
-  const getGame = () => {
-    axios
-      .get(`${API_URL}/videogames/${gameId}.json`)
-      .then((response) => {
-        const gameData = response.data;
+  const getGame = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/videogames/${gameId}.json`);
+      const gameData = response.data;
 
-        const reviews = gameData.reviews
-          ? Object.keys(gameData.reviews).map((key) => ({
-              ...gameData.reviews[key],
-              id: key,
-            }))
-          : [];
-        setGame({ ...gameData, reviews });
-        console.log("Reviews:", reviews);
-      })
-      .catch((e) => console.log("Oops, there is an error! ", e));
+      const reviews = gameData.reviews
+        ? Object.keys(gameData.reviews).map((key) => ({
+            ...gameData.reviews[key],
+            id: key,
+          }))
+        : [];
+
+      const averageRating = reviews.length > 0
+        ? reviews.reduce((sum, review) => sum + Number(review.rating), 0) / reviews.length
+        : null;
+ 
+      setGame({ ...gameData, reviews, rating: averageRating });
+    } catch (e) {
+      console.log("Oops, there is an error!", e);
+    }
   };
 
-  const deleteReview = (reviewId) => {
-    axios
-      .delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`)
-      .then(() => {
-        alert("Review deleted successfully");
-        getGame();
-      })
-      .catch((error) => console.log("Error deleting review...", error));
+  const deleteReview = async (reviewId) => {
+    try {
+      await axios.delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`);
+      alert("Review deleted successfully");
+      await getGame(); 
+    } catch (error) {
+      console.log("Error deleting review...", error);
+    }
   };
 
-  const handleSubmitReview = (reviewData) => {
-    axios
-      .post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData)
-      .then(() => {
-        alert("Review submitted successfully!");
-        setShowForm(false);
-        getGame();
-      })
-      .catch((e) => console.log("Error submitting review...", e));
+  const handleSubmitReview = async (reviewData) => {
+    try {
+      await axios.post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData);
+      alert("Review submitted successfully!");
+      setShowForm(false);
+      await getGame(); 
+    } catch (e) {
+      console.log("Error submitting review...", e);
+    }
   };
 
   const handleEditReview = (review) => {
@@ -61,20 +65,15 @@ function GameDetailsPage() {
     setEditingReview(null);
   };
 
-  const handleUpdateReview = (updatedReview) => {
-    axios
-      .put(
-        `${API_URL}/videogames/${gameId}/reviews/${updatedReview.id}.json`,
-        updatedReview
-      )
-      .then(() => {
-        alert("Review updated successfully!");
-        getGame();
-        setEditingReview(null);
-      })
-      .catch((e) => {
-        console.log("Error updating review...", e);
-      });
+  const handleUpdateReview = async (updatedReview) => {
+    try {
+      await axios.put(`${API_URL}/videogames/${gameId}/reviews/${updatedReview.id}.json`, updatedReview);
+      alert("Review updated successfully!");
+      await getGame();
+      setEditingReview(null);
+    } catch (e) {
+      console.log("Error updating review...", e);
+    }
   };
 
   useEffect(() => {
@@ -97,7 +96,9 @@ function GameDetailsPage() {
               <h2>{game.name}</h2>
               <h3>{game.genre}</h3>
             </div>
-            <h2>Score: {game.rating}</h2>
+            <h2>
+              Score: {game.rating ? game.rating.toFixed(1) : "No rating yet"}
+            </h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
           </div>
@@ -131,26 +132,25 @@ function GameDetailsPage() {
                   />
                 ) : (
                   <>
-                  <div className="review-header">
-                    <h3>{review.username}</h3>
-                    <h3>Rating: {review.rating}/10</h3>
-                  </div>
+                    <div className="review-header">
+                      <h3>{review.username}</h3>
+                      <h3>Rating: {review.rating}/10</h3>
+                    </div>
                     <p className="comment">"{review.comment}"</p>
                     <div>
-
-                    <button
-                      className="game-buttons glow-on-hover"
-                      onClick={() => handleEditReview(review)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="game-buttons glow-on-hover"
-                      onClick={() => deleteReview(review.id)}
+                      <button
+                        className="game-buttons glow-on-hover"
+                        onClick={() => handleEditReview(review)}
                       >
-                      Delete
-                    </button>
-                      </div>
+                        Edit
+                      </button>
+                      <button
+                        className="game-buttons glow-on-hover"
+                        onClick={() => deleteReview(review.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </>
                 )}
               </div>
