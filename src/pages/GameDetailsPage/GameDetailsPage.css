@@ -30,10 +30,13 @@
 }
 
 .game-dtext {
-    width: 30rem;
+    width: auto;
     padding-bottom: 5rem;
     background-color: white;
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 0 2rem 5rem 2rem
+
 }
 
 .game-dimg img {

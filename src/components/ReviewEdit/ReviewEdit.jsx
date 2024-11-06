@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./reviewEdit.css";
+
 
 function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     const [username, setUsername] = useState("");
@@ -29,7 +29,7 @@ function ReviewEdit({ initialReview, onEditReview, onCancelEdit}){
     };
 
     return (
-        <form className="game-form" onSubmit={handleSubmit}>
+        <form className="edit-form" onSubmit={handleSubmit}>
             <div>
             <div>
             <div>
