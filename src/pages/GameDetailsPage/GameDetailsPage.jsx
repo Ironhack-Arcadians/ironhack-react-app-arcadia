@@ -113,7 +113,7 @@ function GameDetailsPage() {
         <div className="game-details-button-container">
           <Link to="/catalogue">
             <button id="back-button" className="game-buttons glow-on-hover">
-              Back to videogames list
+              Back to game list
             </button>
           </Link>
           <button

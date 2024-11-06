@@ -20,15 +20,19 @@ body.home-page-background {
   
   .home-header {
     margin-bottom: 2rem;
-  }
+    font-family: "Jersey 10";
+   }
   
   .home-header h1 {
     font-size: 2.5rem;
+    font-weight: 100;
     color: white;
+    font-size: 7rem;
   }
   
   .home-header p {
-    font-size: 1.2rem;
+    font-size: 3rem;
+    font-weight: 100;
     color: white;
   }
   

@@ -16,7 +16,7 @@ function Navbar() {
       </div>
       <div className="home-buttons">
         <NavLink to="/catalogue" className="home-button">
-          Browse Catalogue
+          Browse Games
         </NavLink>
         <NavLink to="/about" className="home-button">
           About Us

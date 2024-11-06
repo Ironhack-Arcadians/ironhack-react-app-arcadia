@@ -29,11 +29,9 @@ body.game-details-page-background {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 3px solid black;
   border-radius: 10px;
   margin-bottom: 3rem;
-  margin-top: 6rem;
-  background-color: rgba(106, 106, 196, 0.9);
+  margin-top: 1rem;
   padding: 3rem;
 }
 
@@ -41,7 +39,7 @@ body.game-details-page-background {
 .game-dtext {
     width: auto;
     padding-bottom: 5rem;
-    background-color: rgba(235, 224, 226, 0.692);;
+    background-color: #C0B9D5;
     border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
     padding: 0 2rem 5rem 2rem
@@ -100,7 +98,7 @@ body.game-details-page-background {
   .game-content {
     flex-direction: column; /* Stack image and text vertically */
     padding: 1.5rem;
-    margin: 4rem 0 1rem 0;
+    margin: 0 0 1rem 0;
   }
 
   .comment {

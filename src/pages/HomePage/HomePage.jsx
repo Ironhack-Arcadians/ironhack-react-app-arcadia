@@ -18,7 +18,7 @@ function HomePage() {
     <div className="home-page">
       <header className="home-header">
         <h1>Welcome to Arcadia Games</h1>
-        <p>Your ultimate source for games, reviews, and guides.</p>
+        <p>Your ultimate resource for games, reviews, and guides.</p>
       </header>
     </div>
   );
