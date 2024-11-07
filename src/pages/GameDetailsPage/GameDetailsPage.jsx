@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import "./GameDetailsPage.css";
 
 import { API_URL } from "../../config/api.js";
-import Loader from "../../components/Loader.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 import GameForm from "../../components/GameForm/GameForm.jsx";
 import ReviewEdit from "../../components/ReviewEdit/ReviewEdit.jsx";
 

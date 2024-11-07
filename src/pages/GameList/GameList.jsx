@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Loader from "../../components/Loader.jsx";
+import Loader from "../../components/Loader/Loader";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../config/api";
 import { useEffect, useState } from "react";
