@@ -6,17 +6,18 @@ import { API_URL } from "../../config/api";
 import { useEffect, useState } from "react";
 import "./GameList.css";
 
-function GameList() {
+function GameList({ searchQuery = "" }) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundImage = 'url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380")';
-    document.body.style.backgroundSize = 'cover'; 
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.style.padding = '0';
-    
+    document.body.style.backgroundImage =
+      'url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380")';
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.padding = "0";
+
     axios
       .get(`${API_URL}/videogames.json`)
       .then((response) => {
@@ -28,9 +29,12 @@ function GameList() {
             ? Object.values(gameData.reviews)
             : [];
 
-            const averageRating =
+          const averageRating =
             reviews.length > 0
-              ? reviews.reduce((sum, review) => sum + Number(review.rating), 0) / reviews.length
+              ? reviews.reduce(
+                  (sum, review) => sum + Number(review.rating),
+                  0
+                ) / reviews.length
               : null;
 
           return {
@@ -47,15 +51,21 @@ function GameList() {
       .catch((e) => console.log("Error: ", e));
   }, []);
 
+  const filteredGames = games.filter((game) =>
+    searchQuery
+      ? game.name.toLowerCase().includes(searchQuery.toLowerCase())
+      : true
+  );
+
   if (games.length === 0) {
-    return  <Loader />;
+    return <Loader />;
   }
 
   return (
     <div className="list-boundary">
       <ul className="games-list">
-        {games &&
-          games.map((gameObj) => (
+        {filteredGames.length > 0 ? (
+          filteredGames.map((gameObj) => (
             <li key={gameObj.id} className="game-item">
               <img
                 src={gameObj.img_link}
@@ -71,14 +81,16 @@ function GameList() {
                   {gameObj.rating ? gameObj.rating.toFixed(1) : "No rating yet"}
                 </p>
               </div>
-
               <div className="game-buttons glow-on-hover">
                 <Link to={`/catalogue/${gameObj.id}`}>
                   <button className="game-list-button">More Details</button>
                 </Link>
               </div>
             </li>
-          ))}
+          ))
+        ) : (
+          <p>No games found.</p>
+        )}
       </ul>
     </div>
   );
