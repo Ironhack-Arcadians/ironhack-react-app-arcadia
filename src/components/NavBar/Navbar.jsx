@@ -53,15 +53,12 @@ function Navbar({ handleSearch, handleClearSearch }) {
             <button onClick={handleSearchClick} className="search-button">
               Search
             </button>
-            <button onClick={handleClearClick} className="clear-button">
-              Clear
-            </button>
           </div>
         )}
         </div>
 
       <div className="home-buttons">
-        <NavLink to="/catalogue" className="home-button">
+        <NavLink to="/catalogue" className="home-button" onClick={handleClearClick}>
           Browse Games
         </NavLink>
         <NavLink to="/about" className="home-button">
