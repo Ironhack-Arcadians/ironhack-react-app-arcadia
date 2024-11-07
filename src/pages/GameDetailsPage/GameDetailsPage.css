@@ -18,12 +18,6 @@ body.game-details-page-background {
   margin-top: 3rem;
 }
 
-.comment {
-  background-color: rgba(235, 224, 226, 0.692);
-  border: 1px solid grey;
-  border-radius: 10px;
-  padding: 1rem;
-}
 
 .game-content {
   display: flex;
@@ -37,14 +31,14 @@ body.game-details-page-background {
 
 
 .game-dtext {
-    width: auto;
-    padding-bottom: 5rem;
-    background-color: rgba(0, 0, 0, 0.322);
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    padding: 0 2rem 5rem 2rem;
-    color: white
-
+  width: auto;
+  padding-bottom: 5rem;
+  background-color: rgba(0, 0, 0, 0.486);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 0 2rem 5rem 2rem;
+  color: white
+  
 }
 
 .game-dimg img {
@@ -60,30 +54,73 @@ body.game-details-page-background {
 
 .review-item {
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1rem;
   border: 3px solid rgb(0, 0, 0);
-  background-color: rgba(106, 106, 196, 0.9);
+  background-color: rgba(0, 0, 0, 0.486);
   margin: 1rem;
   transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
 .review-item button {
   margin: 1rem 1rem 0 1rem;
+  width: 7rem;
 }
 
 .review-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+}
+
+.review-list{
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.review-user-score{
+  height: auto;
+  border-radius: 100%;
+  width: 3rem;
 }
 
 .review-list h2{
-    color: white
+  color: white;
+  font-size: 3rem;
 }
 
+.review-list h3{
+  color: white;
+  margin: 0;
+  width:auto
+}
+
+.score-red { 
+  background-color: #ff4d4d;
+  padding: 0.5rem;
+  border-radius: 100%
+}
+
+.score-yellow {
+  background-color: #ffbb00;
+  padding: 0.5rem;
+  border-radius: 100%
+ }
+
+.score-green {
+  background-color: #66cc66;
+  padding: 0.5rem;
+  border-radius: 100%
+ }
+
+.comment {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1rem;
+}
 .no-reviews{
-    color: white;
+  color: white;
 }
 
 .details-score {
@@ -108,8 +145,19 @@ body.game-details-page-background {
 
   .game-dtext {
     width: auto; /* Full width */
-    padding: 0.2rem;
+    padding: 1rem;
   }
+
+  .game-dtext h2{
+    font-size: 2rem;
+    margin:0
+  }
+
+  .game-dtext h3{
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
 
   .game-dimg img {
     width: 90%; /* Scale image to fit screen */
@@ -125,14 +173,11 @@ body.game-details-page-background {
     padding: 0 1rem 1rem 1rem;
     margin: 1.5rem 0;
   }
+  
 
   .review-header {
     flex-direction: column; /* Stack username and score vertically */
     align-items: center;
-  }
-
-  .review-header h3 {
-    margin: 5px;
   }
 
   .details-score,

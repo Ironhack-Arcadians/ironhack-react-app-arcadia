@@ -25,6 +25,13 @@ function App() {
     setGames((prevGames) => prevGames.filter((game) => game.id !== id));
   };
 
+  const getScoreClass = (rating) => {
+    if (rating >= 0 && rating < 5) return 'score-red';
+    if (rating >= 5 && rating < 8) return 'score-yellow';
+    if (rating >= 8 && rating <= 10) return 'score-green';
+    return '';
+  };
+
   return (
     <>
       <div className="app">
@@ -33,10 +40,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/About" element={<About />} />
           <Route
+
             path="/catalogue"
-            element={<GameList onDelete={handleDelete} searchQuery={searchQuery} />}
+            element={<GameList onDelete={handleDelete} getScoreClass={getScoreClass} searchQuery={searchQuery} />}
           />
-          <Route path="/catalogue/:gameId" element={<GameDetailsPage />} />
+          <Route path="/catalogue/:gameId"  element={<GameDetailsPage getScoreClass={getScoreClass} />} />
         </Routes>
       </div>
       <div>

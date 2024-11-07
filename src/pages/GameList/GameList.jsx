@@ -6,7 +6,7 @@ import { API_URL } from "../../config/api";
 import { useEffect, useState } from "react";
 import "./GameList.css";
 
-function GameList({ searchQuery = "" }) {
+function GameList({ searchQuery = "", getScoreClass }) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
@@ -77,8 +77,8 @@ function GameList({ searchQuery = "" }) {
               </div>
               <div className="game-text">
                 <p>{gameObj.genre}</p>
-                <p>
-                  {gameObj.rating ? gameObj.rating.toFixed(1) : "No rating yet"}
+                <p className={getScoreClass(gameObj.rating)}>
+                  {gameObj.rating ? gameObj.rating === 10 ? "10" : gameObj.rating.toFixed(1) : "No rating yet"}
                 </p>
               </div>
               <div className="game-buttons glow-on-hover">

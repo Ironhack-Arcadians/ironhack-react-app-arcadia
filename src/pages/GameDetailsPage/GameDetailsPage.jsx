@@ -8,11 +8,13 @@ import Loader from "../../components/Loader/Loader.jsx";
 import GameForm from "../../components/GameForm/GameForm.jsx";
 import ReviewEdit from "../../components/ReviewEdit/ReviewEdit.jsx";
 
-function GameDetailsPage() {
+function GameDetailsPage(props) {
   const [game, setGame] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [editingReview, setEditingReview] = useState(null);
   const { gameId } = useParams();
+
+
 
   const getGame = async () => {
     try {
@@ -103,7 +105,10 @@ function GameDetailsPage() {
               <h3>{game.genre}</h3>
             </div>
             <h2>
-              Score: {game.rating ? game.rating.toFixed(1) : "No rating yet"}
+              Score: { }
+              <span className={props.getScoreClass(game.rating)}>
+              {game.rating ? game.rating.toFixed(1) : "No rating yet"}
+            </span>
             </h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
@@ -126,7 +131,7 @@ function GameDetailsPage() {
         {showForm && <GameForm onSubmitReview={handleSubmitReview} />}
 
         <div className="review-list">
-          <h2>Reviews</h2>
+          <h2>User Reviews</h2>
           {game.reviews && game.reviews.length > 0 ? (
             game.reviews.map((review) => (
               <div key={review.id} className="review-item">
@@ -140,9 +145,13 @@ function GameDetailsPage() {
                   <>
                     <div className="review-header">
                       <h3>{review.username}</h3>
-                      <h3>Rating: {review.rating}/10</h3>
+                      <div className ="review-user-score">
+                      <h3 className={props.getScoreClass(review.rating)}>
+                        {review.rating}
+                      </h3>
+                      </div>
+                      <p className="comment">"{review.comment}"</p>
                     </div>
-                    <p className="comment">"{review.comment}"</p>
                     <div>
                       <button
                         className="game-buttons glow-on-hover"
