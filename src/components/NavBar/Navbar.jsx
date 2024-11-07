@@ -3,7 +3,7 @@ import { useState } from "react";
 import logo from "../../images/Logo.png";
 import "./NavBar.css";
 
-function Navbar({ handleSearch }) {
+function Navbar({ handleSearch, handleClearSearch }) {
   const [query, setQuery] = useState("");
   const location = useLocation();
 
@@ -13,6 +13,11 @@ function Navbar({ handleSearch }) {
 
   const handleSearchClick = () => {
     handleSearch(query);
+  };
+
+  const handleClearClick = () => {
+    setQuery("");  
+    handleClearSearch("");  
   };
 
   const handleKeyPress = (e) => {
@@ -47,6 +52,9 @@ function Navbar({ handleSearch }) {
               />
             <button onClick={handleSearchClick} className="search-button">
               Search
+            </button>
+            <button onClick={handleClearClick} className="clear-button">
+              Clear
             </button>
           </div>
         )}

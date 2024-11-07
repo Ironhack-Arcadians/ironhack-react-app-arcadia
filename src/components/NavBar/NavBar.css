@@ -33,7 +33,6 @@ nav h1{
 }
 
 
-
 .search-container{
   display: flex;
   flex: 1;
@@ -83,6 +82,21 @@ nav h1{
   }
   
   .home-button:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+  }
+
+  .clear-button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .clear-button:hover {
     background-color: #ffffff;
     transform: scale(1.03);
   }
