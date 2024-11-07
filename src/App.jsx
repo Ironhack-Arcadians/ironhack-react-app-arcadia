@@ -9,6 +9,7 @@ import Navbar from "./components/NavBar/Navbar.jsx";
 import About from "./pages/About/About.jsx";
 import GameDetailsPage from "./pages/GameDetailsPage/GameDetailsPage.jsx";
 import GameList from "./pages/GameList/GameList.jsx";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,6 +46,7 @@ function App() {
             element={<GameList onDelete={handleDelete} getScoreClass={getScoreClass} searchQuery={searchQuery} />}
           />
           <Route path="/catalogue/:gameId"  element={<GameDetailsPage getScoreClass={getScoreClass} />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
       <div>
