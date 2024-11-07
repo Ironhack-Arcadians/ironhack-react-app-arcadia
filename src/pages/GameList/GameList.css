@@ -152,6 +152,11 @@
     padding: 0.75rem;
   }
 
+  .game-item p{
+    width: 2rem;
+    height: auto;
+  }
+
   .recipe-img {
     width: 8rem; 
   }
@@ -161,10 +166,6 @@
     margin: 0.5rem 0 0 0;
     gap: 0rem; 
     color: white;
-  }
-
-  .game-text p{
-    margin:0
   }
 
   .glow-on-hover {
