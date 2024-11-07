@@ -8,16 +8,15 @@ body {
 }
 
 
-.not-found-body{
+.not-found-body {
     color: white;
     margin-top: 7rem;
 }
 
-.not-found-body p{
+.not-found-body p {
     margin: 0;
 }
 
-.not-found-body img{
+.not-found-body img {
     width: 30rem;
 }
-

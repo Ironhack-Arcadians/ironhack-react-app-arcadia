@@ -16,8 +16,8 @@ function Navbar({ handleSearch, handleClearSearch }) {
   };
 
   const handleClearClick = () => {
-    setQuery("");  
-    handleClearSearch("");  
+    setQuery("");
+    handleClearSearch("");
   };
 
   const handleKeyPress = (e) => {
@@ -35,9 +35,9 @@ function Navbar({ handleSearch, handleClearSearch }) {
         </NavLink>
       </div>
       <NavLink to="/">
-      <div className="title-container">
-        <h1>[Arcadia]</h1>
-      </div>
+        <div className="title-container">
+          <h1>[Arcadia]</h1>
+        </div>
       </NavLink>
 
       <div className="search-container">
@@ -50,13 +50,13 @@ function Navbar({ handleSearch, handleClearSearch }) {
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
               className="search-bar"
-              />
+            />
             <button onClick={handleSearchClick} className="search-button">
               Search
             </button>
           </div>
         )}
-        </div>
+      </div>
 
       <div className="home-buttons">
         <NavLink to="/catalogue" className="home-button" onClick={handleClearClick}>

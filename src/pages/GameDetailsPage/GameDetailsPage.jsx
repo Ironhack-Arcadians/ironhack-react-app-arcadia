@@ -23,15 +23,15 @@ function GameDetailsPage(props) {
 
       const reviews = gameData.reviews
         ? Object.keys(gameData.reviews).map((key) => ({
-            ...gameData.reviews[key],
-            id: key,
-          }))
+          ...gameData.reviews[key],
+          id: key,
+        }))
         : [];
 
       const averageRating = reviews.length > 0
         ? reviews.reduce((sum, review) => sum + Number(review.rating), 0) / reviews.length
         : null;
- 
+
       setGame({ ...gameData, reviews, rating: averageRating });
     } catch (e) {
       console.log("Oops, there is an error!", e);
@@ -41,7 +41,7 @@ function GameDetailsPage(props) {
   const deleteReview = async (reviewId) => {
     try {
       await axios.delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`);
-      await getGame(); 
+      await getGame();
     } catch (error) {
       console.log("Error deleting review...", error);
     }
@@ -51,7 +51,7 @@ function GameDetailsPage(props) {
     try {
       await axios.post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData);
       setShowForm(false);
-      await getGame(); 
+      await getGame();
     } catch (e) {
       console.log("Error submitting review...", e);
     }
@@ -104,8 +104,8 @@ function GameDetailsPage(props) {
             <h2>
               Score: { }
               <span className={props.getScoreClass(game.rating)}>
-              {game.rating ? game.rating.toFixed(1) : "No rating yet"}
-            </span>
+                {game.rating ? game.rating.toFixed(1) : "No rating yet"}
+              </span>
             </h2>
             <p>{game.description}</p>
             <a href={game.guide_link}>{game.name} guide</a>
@@ -142,13 +142,13 @@ function GameDetailsPage(props) {
                   <>
                     <div className="review-header">
                       <h3>{review.username}</h3>
-                      <div className ="review-user-score">
-                      <h3 className={props.getScoreClass(review.rating)}>
-                        {review.rating}
-                      </h3>
+                      <div className="review-user-score">
+                        <h3 className={props.getScoreClass(review.rating)}>
+                          {review.rating}
+                        </h3>
                       </div>
                     </div>
-                      <p className="comment">"{review.comment}"</p>
+                    <p className="comment">"{review.comment}"</p>
                     <div>
                       <button
                         className="game-buttons glow-on-hover"

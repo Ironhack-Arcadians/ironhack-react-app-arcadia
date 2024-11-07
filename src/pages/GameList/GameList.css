@@ -12,6 +12,12 @@
   margin-top: 8rem;
 }
 
+.game-list-button {
+  margin-top: auto;
+  color: white;
+  background: none;
+}
+
 .game-item {
   display: flex;
   flex-direction: column;
@@ -40,7 +46,6 @@
   margin: auto 0 0 0;
 }
 
-
 .game-text {
   display: flex;
   gap: 2rem;
@@ -48,16 +53,11 @@
   color: white;
 }
 
-
 .game-text p {
   margin-top: auto;
 }
 
-.game-list-button {
-  margin-top: auto;
-  color: white;
-  background: none;
-}
+/* RGB BUTTONS */
 
 .glow-on-hover {
   width: 220px;
@@ -74,18 +74,16 @@
 
 .glow-on-hover:before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -128,9 +126,11 @@
   0% {
     background-position: 0 0;
   }
+
   50% {
     background-position: 400% 0;
   }
+
   100% {
     background-position: 0 0;
   }
@@ -143,33 +143,34 @@
   .games-list {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     margin-top: 6rem;
   }
 
   .game-item {
-    width: 90%; 
+    width: 90%;
     padding: 0.75rem;
   }
 
-  .game-item p{
+  .game-item p {
     width: 2rem;
     height: auto;
   }
 
   .recipe-img {
-    width: 8rem; 
+    width: 8rem;
   }
 
-  .game-name, .game-text {
+  .game-name,
+  .game-text {
     flex-direction: column;
     margin: 0.5rem 0 0 0;
-    gap: 0rem; 
+    gap: 0rem;
     color: white;
   }
 
   .glow-on-hover {
-    width: 180px; 
+    width: 180px;
     height: 40px;
   }
 }

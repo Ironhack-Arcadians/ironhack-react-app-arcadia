@@ -5,9 +5,9 @@ import JustinImage from "./justin.png";
 
 function About() {
   useEffect(() => {
-    
+
     document.body.classList.add('about-page');
-    
+
     return () => {
       document.body.classList.remove('about-page');
       document.body.style.overflowY = '';

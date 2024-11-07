@@ -44,6 +44,7 @@
     flex-direction: column;
     justify-items: center;
   }
+
   .carousel__item {
     margin-right: 0;
   }
