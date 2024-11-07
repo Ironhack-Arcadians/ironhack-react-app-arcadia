@@ -17,6 +17,10 @@ function App() {
     setSearchQuery(query);
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery("");
+  };
+
   const handleDelete = (id) => {
     setGames((prevGames) => prevGames.filter((game) => game.id !== id));
   };
@@ -24,7 +28,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Navbar searchQuery={searchQuery} handleSearch={handleSearch}/>
+        <Navbar searchQuery={searchQuery} handleSearch={handleSearch} handleClearSearch={handleClearSearch}/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/About" element={<About />} />

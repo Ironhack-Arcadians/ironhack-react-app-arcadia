@@ -85,6 +85,40 @@ nav h1{
     transform: scale(1.03);
   }
 
+  .search-button {
+    text-decoration: none;
+    color: white;
+    background-color: #FF5C00;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+
+  .search-button:hover {
+    background-color: #ffffff;
+    color: #0000FF;
+    transform: scale(1.03);
+  }
+
+  .clear-button {
+    text-decoration: none;
+    color: white;
+    background-color: #FF5C00;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+
+  .clear-button:hover {
+    background-color: #ffffff;
+    color: #0000FF;
+    transform: scale(1.03);
+  }
+
   @media (max-width: 460px) {
 
     .navbar h1{
