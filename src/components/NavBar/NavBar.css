@@ -1,7 +1,5 @@
 nav{
   display: flex;
-  align-items: center;
-  justify-content:center;
   flex-direction: row;
 }
 
@@ -18,20 +16,45 @@ nav h1{
   left: 0;
   right: 0;
   background-color: rgb(0, 0, 0);
+  padding: 0 1rem;
   z-index: 1000;
 }
 
+.navbar input{
+  border-radius: 10px;
+  width: 15rem;
+  padding: 0.5rem
+}
+
+.search-bar{
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+
+
+.search-container{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.title-container { 
+  display:flex;
+  flex: 0 0 auto;
+  margin-left: 1rem;
+}
 
 .logo-container img {
   width: 5rem; 
   height: auto; 
 }
 
-.title-container { 
-  display:flex;
-  flex: 1;
-
-}
 
 .title-container h1 {
   font-family: "Jersey 10", sans-serif;
@@ -43,8 +66,9 @@ nav h1{
 .home-buttons {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
     margin-left: auto;
+    flex: 0 0 auto;
   }
   
   .home-button {

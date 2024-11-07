@@ -34,22 +34,25 @@ function Navbar({ handleSearch }) {
         <h1>[Arcadia]</h1>
       </div>
 
-      <div className="home-buttons">
+      <div className="search-container">
         {location.pathname === "/catalogue" && (
-          <div className="search-container">
+          <div className="search-bar">
             <input
               type="text"
               placeholder="Search games"
               value={query}
               onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               className="search-bar"
-            />
+              />
             <button onClick={handleSearchClick} className="search-button">
               Search
             </button>
           </div>
         )}
+        </div>
+
+      <div className="home-buttons">
         <NavLink to="/catalogue" className="home-button">
           Browse Games
         </NavLink>
