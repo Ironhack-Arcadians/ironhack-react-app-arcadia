@@ -29,6 +29,7 @@ function GameList({ searchQuery = "", getScoreClass }) {
             ? Object.values(gameData.reviews)
             : [];
 
+          //Generate average rating based on reviews
           const averageRating =
             reviews.length > 0
               ? reviews.reduce(
@@ -51,6 +52,7 @@ function GameList({ searchQuery = "", getScoreClass }) {
       .catch((e) => console.log("Error: ", e));
   }, []);
 
+  //Search bar
   const filteredGames = games.filter((game) =>
     searchQuery
       ? game.name.toLowerCase().includes(searchQuery.toLowerCase())
