@@ -41,7 +41,6 @@ function GameDetailsPage(props) {
   const deleteReview = async (reviewId) => {
     try {
       await axios.delete(`${API_URL}/videogames/${gameId}/reviews/${reviewId}.json`);
-      alert("Review deleted successfully");
       await getGame(); 
     } catch (error) {
       console.log("Error deleting review...", error);
@@ -51,7 +50,6 @@ function GameDetailsPage(props) {
   const handleSubmitReview = async (reviewData) => {
     try {
       await axios.post(`${API_URL}/videogames/${gameId}/reviews.json`, reviewData);
-      alert("Review submitted successfully!");
       setShowForm(false);
       await getGame(); 
     } catch (e) {
@@ -70,7 +68,6 @@ function GameDetailsPage(props) {
   const handleUpdateReview = async (updatedReview) => {
     try {
       await axios.put(`${API_URL}/videogames/${gameId}/reviews/${updatedReview.id}.json`, updatedReview);
-      alert("Review updated successfully!");
       await getGame();
       setEditingReview(null);
     } catch (e) {
