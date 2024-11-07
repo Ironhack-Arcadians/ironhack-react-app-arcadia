@@ -147,8 +147,8 @@ function GameDetailsPage(props) {
                         {review.rating}
                       </h3>
                       </div>
-                      <p className="comment">"{review.comment}"</p>
                     </div>
+                      <p className="comment">"{review.comment}"</p>
                     <div>
                       <button
                         className="game-buttons glow-on-hover"

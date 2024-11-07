@@ -34,10 +34,11 @@ function Navbar({ handleSearch, handleClearSearch }) {
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
-
+      <NavLink to="/">
       <div className="title-container">
         <h1>[Arcadia]</h1>
       </div>
+      </NavLink>
 
       <div className="search-container">
         {location.pathname === "/catalogue" && (
