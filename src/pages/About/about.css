@@ -11,7 +11,6 @@ body.about-page {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
   padding: 0;
   min-height: 100vh;
 }
@@ -24,8 +23,8 @@ body.about-page {
   text-align: center;
   color: white;
   padding: 2rem;
-  min-height: 100vh;
-  margin-top: 2rem;
+  height: auto;
+  margin-top: 4rem;
 }
 
 
@@ -40,6 +39,7 @@ body.about-page {
 .profile-container {
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .profile {
@@ -53,4 +53,29 @@ body.about-page {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+    margin-top: 1rem;
+    height: auto;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-image {
+    width: 120px;
+  }
+
+  .about-container h1,
+  .about-container h2,
+  .about-container h3,
+  .about-container p {
+    margin: 1rem 0;
+  }
 }

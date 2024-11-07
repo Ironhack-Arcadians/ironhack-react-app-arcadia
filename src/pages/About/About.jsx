@@ -7,7 +7,7 @@ function About() {
   useEffect(() => {
     
     document.body.classList.add('about-page');
-    document.body.style.overflowY = 'hidden';
+    
     return () => {
       document.body.classList.remove('about-page');
       document.body.style.overflowY = '';

@@ -55,3 +55,28 @@ body.home-page-background {
   .home-button:hover {
     background-color: #0056b3;
   }
+
+  @media (max-width: 460px) {
+    .home-page {
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  
+    .home-header h1 {
+      font-size: 4rem;
+    }
+  
+    .home-header p {
+      font-size: 1.5rem;
+    }
+  
+    .home-buttons {
+      gap: 0.5rem;
+      justify-content: center;
+    }
+  
+    .home-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
