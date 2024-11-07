@@ -10,7 +10,6 @@ function HomePage() {
   useEffect(() => {
     // Add a class to body when on HomePage
     document.body.classList.add("home-page-background");
-    document.body.style.overflowY = "hidden";
 
     return () => {
       // Remove class and add y-axis scroller to body when leaving HomePage
@@ -31,9 +30,9 @@ function HomePage() {
           const averageRating =
             reviews.length > 0
               ? reviews.reduce(
-                  (sum, review) => sum + Number(review.rating),
-                  0
-                ) / reviews.length
+                (sum, review) => sum + Number(review.rating),
+                0
+              ) / reviews.length
               : null;
           return {
             id,
@@ -41,7 +40,7 @@ function HomePage() {
             rating: averageRating,
           };
         });
-        
+
         // Sort games by rating and select top 10
         const sortedTopGames = gamesArr
           .sort((a, b) => (b.rating || 0) - (a.rating || 0))

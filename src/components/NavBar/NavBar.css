@@ -32,8 +32,6 @@ nav h1{
   justify-content: center;
 }
 
-
-
 .search-container{
   display: flex;
   flex: 1;
@@ -90,6 +88,10 @@ nav h1{
   @media (max-width: 460px) {
 
     .navbar h1{
+      display: none
+    }
+
+    .search-bar{
       display: none
     }
   }

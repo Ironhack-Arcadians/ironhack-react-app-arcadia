@@ -1,39 +1,44 @@
 .carousel {
-    display: flex;
-    justify-content: center;  /* Align the games horizontally */
-    padding: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carousel__list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.carousel__item {
+  flex: 1 1 18%;
+  margin: 1rem;
+  text-align: center;
+}
+
+.carousel-image {
+  width: 10rem;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(50, 50, 50, 0.5);
+}
+
+.carousel-item-title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff5e00;
+  text-transform: capitalize;
+}
+
+.carousel-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 460px) {
   .carousel__list {
-    display: flex;
-    justify-content: space-between; /* Space the items out evenly */
-    width: 100%;
-    max-width: 1200px; /* Max width for the row */
+    flex-direction: column;
   }
-  
-  .carousel__item {
-    flex: 1 1 18%; /* Each item will take 18% of the container's width */
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .carousel-image {
-    width: 100%;  /* Image takes the full width of the item */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(50, 50, 50, 0.5);
-  }
-  
-  .carousel-item-title {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    text-transform: capitalize;
-  }
-  
-  .carousel-item-link {
-    text-decoration: none;
-    color: inherit;
-  }
+}
