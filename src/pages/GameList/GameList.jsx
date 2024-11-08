@@ -78,7 +78,7 @@ function GameList({ searchQuery = "", getScoreClass }) {
                 <h3>{gameObj.name}</h3>
               </div>
               <div className="game-text">
-                <p>{gameObj.genre}</p>
+                <p className="game-genre">{gameObj.genre}</p>
                 <p className={getScoreClass(gameObj.rating)}>
                   {gameObj.rating ? gameObj.rating === 10 ? "10" : gameObj.rating.toFixed(1) : "No rating yet"}
                 </p>
