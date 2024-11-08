@@ -18,7 +18,7 @@ function About() {
     <div className="about-container">
       
 
-      <div className="description">
+      <div className="about-description">
       <h1>What do we do?</h1>
         <p>
           Welcome to Arcadia. We are a game rating website created with the
@@ -53,9 +53,12 @@ function About() {
         <h2>Our founders:</h2>
       </div>
 
+<div className='founders-cards'>
+
       <div className="profile-container">
         <div className="profile">
           <h3>Vicente</h3>
+          <img src={VicenteImage} alt="Vicente" className="profile-image" />
           <p>I’m an ordinary guy from Valencia, currently I'm learning web
               development at Ironhack, I love video games, movies, drawing, and
               traveling. What I adore most in the world is my pets; right now, I
@@ -63,18 +66,18 @@ function About() {
           <a href="https://www.linkedin.com/in/vicente-duch-moreno-a7b6a82a2/">LinkedIn</a>
           <a href="https://github.com/vicenteduch">Github</a>
           
-          <img src={VicenteImage} alt="Vicente" className="profile-image" />
         </div>
 
         <div className="profile">
           <h3>Justin</h3>
+          <img src={JustinImage} alt="Justin" className="profile-image" />
           <p>Passionate about gaming and technology, Justin brings creativity and innovation to Arcadia. 
             With a keen eye for detail and a drive to build engaging user experiences, 
             he strives to make Arcadia a go-to community for gamers worldwide.</p>
           <a href="https://www.linkedin.com/in/justin-fanton-2034551a8/">LinkedIn</a>
           <a href="https://github.com/JAFanton">Github</a>
-          <img src={JustinImage} alt="Justin" className="profile-image" />
         </div>
+</div>
       </div>
     </div>
     </div>

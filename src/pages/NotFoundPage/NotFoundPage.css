@@ -20,3 +20,16 @@ body {
 .not-found-body img {
     width: 30rem;
 }
+
+@media (max-width: 460px) {
+    .not-found-body{
+    padding: 1rem;
+    margin-top: 3rem;
+    width: 90%;
+    height: auto;
+    }
+    .not-found-body img{
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
