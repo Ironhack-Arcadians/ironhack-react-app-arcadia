@@ -25,6 +25,8 @@ body.about-page {
   padding: 2rem;
   height: auto;
   margin-top: 4rem;
+  max-width: 100%;
+  margin: 4rem auto;
 }
 
 
@@ -40,6 +42,7 @@ body.about-page {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .profile {
@@ -48,13 +51,52 @@ body.about-page {
   align-items: center;
 }
 
+.description {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.322);
+  margin-bottom: 2rem;
+  width: 70rem;
+}
+
+.picture-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.322);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  width: 66rem;
+}
+
 .profile-image {
   width: 150px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
+.description-list {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.322);
+  width: 70rem;
+}
+
+.description-list ul, li {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.description-list h2, p {
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .about-container {
