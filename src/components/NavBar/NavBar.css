@@ -1,15 +1,15 @@
-nav{
+nav {
   display: flex;
   flex-direction: row;
 }
 
-nav h1{
+nav h1 {
   margin: 0;
 }
 
 .navbar {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -20,19 +20,19 @@ nav h1{
   z-index: 1000;
 }
 
-.navbar input{
+.navbar input {
   border-radius: 10px;
   width: 15rem;
   padding: 0.5rem
 }
 
-.search-bar{
+.search-bar {
   display: flex;
   position: relative;
   justify-content: center;
 }
 
-.search-container{
+.search-container {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -42,15 +42,15 @@ nav h1{
   flex: 0 0 auto;
 }
 
-.title-container { 
-  display:flex;
+.title-container {
+  display: flex;
   flex: 0 0 auto;
   margin-left: 1rem;
 }
 
 .logo-container img {
-  width: 5rem; 
-  height: auto; 
+  width: 5rem;
+  height: auto;
 }
 
 
@@ -62,70 +62,70 @@ nav h1{
 }
 
 .home-buttons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: auto;
-    flex: 0 0 auto;
-  }
-  
-  .home-button {
-    text-decoration: none;
-    color: white;
-    background-color: #FF5C00;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-right: 1rem;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-  }
-  
-  .home-button:hover {
-    background-color: #ffffff;
-    transform: scale(1.03);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.home-button {
+  text-decoration: none;
+  color: white;
+  background-color: #FF5C00;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-right: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.home-button:hover {
+  background-color: #ffffff;
+  transform: scale(1.03);
+}
+
+.search-button {
+  text-decoration: none;
+  color: white;
+  background-color: #FF5C00;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.search-button:hover {
+  background-color: #ffffff;
+  color: #0000FF;
+  transform: scale(1.03);
+}
+
+.clear-button {
+  text-decoration: none;
+  color: white;
+  background-color: #FF5C00;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.clear-button:hover {
+  background-color: #ffffff;
+  color: #0000FF;
+  transform: scale(1.03);
+}
+
+@media (max-width: 460px) {
+
+  .navbar h1 {
+    display: none
   }
 
-  .search-button {
-    text-decoration: none;
-    color: white;
-    background-color: #FF5C00;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+  .search-bar {
+    display: none
   }
-
-  .search-button:hover {
-    background-color: #ffffff;
-    color: #0000FF;
-    transform: scale(1.03);
-  }
-
-  .clear-button {
-    text-decoration: none;
-    color: white;
-    background-color: #FF5C00;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-  }
-
-  .clear-button:hover {
-    background-color: #ffffff;
-    color: #0000FF;
-    transform: scale(1.03);
-  }
-
-  @media (max-width: 460px) {
-
-    .navbar h1{
-      display: none
-    }
-
-    .search-bar{
-      display: none
-    }
-  }
+}

@@ -36,7 +36,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Navbar searchQuery={searchQuery} handleSearch={handleSearch} handleClearSearch={handleClearSearch}/>
+        <Navbar searchQuery={searchQuery} handleSearch={handleSearch} handleClearSearch={handleClearSearch} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/About" element={<About />} />
@@ -45,7 +45,7 @@ function App() {
             path="/catalogue"
             element={<GameList onDelete={handleDelete} getScoreClass={getScoreClass} searchQuery={searchQuery} />}
           />
-          <Route path="/catalogue/:gameId"  element={<GameDetailsPage getScoreClass={getScoreClass} />} />
+          <Route path="/catalogue/:gameId" element={<GameDetailsPage getScoreClass={getScoreClass} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

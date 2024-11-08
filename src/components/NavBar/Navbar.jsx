@@ -16,8 +16,8 @@ function Navbar({ handleSearch, handleClearSearch }) {
   };
 
   const handleClearClick = () => {
-    setQuery("");  
-    handleClearSearch("");  
+    setQuery("");
+    handleClearSearch("");
   };
 
   const handleKeyPress = (e) => {
@@ -34,10 +34,11 @@ function Navbar({ handleSearch, handleClearSearch }) {
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
-
-      <div className="title-container">
-        <h1>[Arcadia]</h1>
-      </div>
+      <NavLink to="/">
+        <div className="title-container">
+          <h1>[Arcadia]</h1>
+        </div>
+      </NavLink>
 
       <div className="search-container">
         {location.pathname === "/catalogue" && (
@@ -49,13 +50,13 @@ function Navbar({ handleSearch, handleClearSearch }) {
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
               className="search-bar"
-              />
+            />
             <button onClick={handleSearchClick} className="search-button">
               Search
             </button>
           </div>
         )}
-        </div>
+      </div>
 
       <div className="home-buttons">
         <NavLink to="/catalogue" className="home-button" onClick={handleClearClick}>

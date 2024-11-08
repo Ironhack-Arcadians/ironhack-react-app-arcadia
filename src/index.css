@@ -3,11 +3,15 @@
   font-weight: 400;
 }
 
+/*FONTS*/
+
 .jersey-10-regular {
   font-family: "Jersey 10", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
+/*GENERAL CSS*/
 
 h3 {
   font-family: "Jersey 10", sans-serif;
@@ -21,13 +25,13 @@ h2 {
   font-size: 2rem;
 }
 
-.app{
-  display:flex;
-  flex-direction:column;
+.app {
+  display: flex;
+  flex-direction: column;
   min-height: 80vh;
 }
 
-.content{
+.content {
   flex: 1;
 }
 
@@ -37,6 +41,7 @@ a {
   color: #FF5C00;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #02398d;
 }
@@ -64,12 +69,9 @@ button {
   transition: border-color 0.25s;
 }
 
-.footer{
- margin-top: auto;
- width: 100%;
-  
-  
+.footer {
+  margin-top: auto;
+  width: 100%;
+
+
 }
-
-
-

@@ -5,7 +5,6 @@ body {
   margin: 0;
 }
 
-
 body.about-page {
   background-image: url('https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380');
   background-size: cover;
@@ -14,7 +13,6 @@ body.about-page {
   padding: 0;
   min-height: 100vh;
 }
-
 
 .about-container {
   display: flex;
@@ -28,7 +26,6 @@ body.about-page {
   max-width: 100%;
   margin: 4rem auto;
 }
-
 
 .about-container h1,
 .about-container h2,
@@ -98,7 +95,9 @@ body.about-page {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+/* RESPONSIVENESS */
+
+@media (max-width: 460px) {
   .about-container {
     padding: 1rem;
     margin-top: 1rem;
