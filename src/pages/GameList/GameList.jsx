@@ -10,12 +10,6 @@ function GameList({ searchQuery = "", getScoreClass }) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    document.body.style.backgroundImage =
-      'url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730987092~exp=1730990692~hmac=5acf5320bc1cb833759ff5ea389c154498a74e3343630050b291e38f0dd6f7f5&w=1380")';
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
     document.body.style.padding = "0";
 
     axios

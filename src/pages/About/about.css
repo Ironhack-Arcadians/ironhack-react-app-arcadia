@@ -6,7 +6,7 @@ body {
 }
 
 body.about-page {
-  background-image: url('https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380');
+  background-color: #010453;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
