@@ -18,7 +18,8 @@ Arcadia uses Firebase to manage our database and custom API, ensuring smooth and
 
 - Firestore Database: All game data, including details and reviews, is stored and accessed through Firebase Firestore, making it easy to update and retrieve information in real-time.
 - Custom API: Arcadia’s custom API, built using Firebase functions, manages game details and reviews efficiently. This API allows us to retrieve game data, post and update reviews, and compute the average rating, leveraging Firebase’s scalability and security.
-Project Functionalities
+
+# Project Functionalities
 
 **Navigation and Pages**
 
