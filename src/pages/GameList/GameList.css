@@ -13,9 +13,14 @@
 }
 
 .game-list-button {
-  margin-top: auto;
+  margin-top: 0.3rem;
   color: white;
   background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .game-item {
