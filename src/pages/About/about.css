@@ -6,7 +6,7 @@ body {
 }
 
 body.about-page {
-  background-image: url('https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148388106.jpg?t=st=1730911387~exp=1730914987~hmac=5a30e01a55ddad9c87d303ae1eb5cbb0ec904d3d63bea8fe7fb52ed0b5491e4e&w=1380');
+  background-color: #010453;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,8 +37,8 @@ body.about-page {
 
 .profile-container {
   display: flex;
+  flex-direction: row;
   gap: 40px;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -54,20 +54,19 @@ body.about-page {
   background-color: rgba(0, 0, 0, 0.322);
   margin-bottom: 2rem;
   width: 70rem;
+  padding: 1.5rem;
 }
 
 .picture-segment {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.322);
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 2rem;
-  width: 66rem;
+  width: 70rem;
+  padding: 1.5rem;
 }
 
 .profile-image {
@@ -75,8 +74,6 @@ body.about-page {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
-  margin-top: 2rem;
 }
 
 .description-list {
@@ -84,14 +81,17 @@ body.about-page {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.322);
   width: 70rem;
+  padding: 1.5rem;
 }
 
-.description-list ul, li {
+.about-description-list ul,
+.about-description li {
   text-align: left;
   margin-bottom: 1rem;
 }
 
-.description-list h2, p {
+.description-list h2,
+p {
   text-align: center;
 }
 
@@ -100,23 +100,45 @@ body.about-page {
 @media (max-width: 460px) {
   .about-container {
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    width: 90%;
     height: auto;
   }
 
   .profile-container {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    width: 100%;
   }
 
   .profile-image {
-    width: 120px;
+    width: 80%;
+    margin-bottom: 1rem;
   }
 
-  .about-container h1,
-  .about-container h2,
-  .about-container h3,
-  .about-container p {
+  .description,
+  .picture-segment,
+  .description-list {
+    width: 100%;
+    padding: 1rem;
     margin: 1rem 0;
+  }
+
+  .about-container h3 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+
+  .about-container h2 {}
+
+  .about-container p {
+    margin: 0;
+    font-size: 1.2rem;
   }
 }
