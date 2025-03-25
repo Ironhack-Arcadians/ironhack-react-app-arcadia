@@ -2,6 +2,7 @@
 
 Arcadia is a game-rating platform built to connect gamers worldwide, allowing users to discover popular titles, share insights, and engage in a community-driven space for all things gaming. With a mission to provide a comprehensive library of games enriched by user-generated reviews, Arcadia empowers users to explore new games and share experiences.
 
+
 **Features Overview**
 
 Arcadia adheres to the CRUD (Create, Read, Update, Delete) framework, allowing users to interact fully with game reviews on the platform:
@@ -20,6 +21,7 @@ Arcadia uses Firebase to manage our database and custom API, ensuring smooth and
 - Custom API: Arcadia’s custom API, built using Firebase functions, manages game details and reviews efficiently. This API allows us to retrieve game data, post and update reviews, and compute the average rating, leveraging Firebase’s scalability and security.
 
 # Project Functionalities
+
 
 **Navigation and Pages**
 
@@ -42,6 +44,7 @@ Review Editing: Each user’s submitted review includes an “Edit” button, wh
 
 Review Deletion: Users can delete their reviews, which removes their comments and rating from the game details. The average rating adjusts automatically, with Firebase recalculating the new average to reflect this removal.
 
+
 **Conditional Rating Color Rendering**
 
 Arcadia dynamically changes the color of each game’s rating, providing visual feedback for the quality of the game based on user reviews:
@@ -49,6 +52,7 @@ Arcadia dynamically changes the color of each game’s rating, providing visual 
 High Ratings: Ratings above a certain threshold appear in green.
 Moderate Ratings: Average ratings are displayed in neutral colors.
 Low Ratings: Ratings that fall below a threshold appear in red.
+
 
 **Average Rating Calculation**
 
